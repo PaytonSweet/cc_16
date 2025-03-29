@@ -52,7 +52,7 @@ function displayProducts(products) { // function to display products
         container.appendChild(productElement);
     });
 }
-
+// Task 5: Reusable Error Handler
 function handleError(error) { // function to log errors
     console.error("Error fetching products:", error);
 }
