@@ -34,8 +34,23 @@ async function fetchProductsAsync() { // fetches products using async
     }
 }
 
+// Task 4: Display the Products (updating displayProducts function)
 function displayProducts(products) { // function to display products
-    console.log("Displaying products:", products);
+    const container = document.getElementById("product-container");
+    container.innerHTML = ""; // ensures html is clear
+    
+    products.slice(0,5).forEach(product => { // selects first 5 products
+        const productElement = document.createElement("div");
+        productElement.classList.add("product-item");
+
+        //displays each products name, price, and image
+        productElement.innerHTML = `<h2>${product.fields.name}</h2> 
+        <p>Price: $${product.fields.price}</p>
+        <img src="${product.fields.image[0].url}" alt="${product.fields.name}"/>`;
+
+        // appends them to container
+        container.appendChild(productElement);
+    });
 }
 
 function handleError(error) { // function to log errors
