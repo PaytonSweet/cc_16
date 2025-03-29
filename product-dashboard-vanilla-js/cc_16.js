@@ -58,6 +58,7 @@ function handleError(error) { // function to log errors
 }
 
 
-
+// Task 6: Call Your Fetch Functions
 // calls function
 fetchProductsThen();
+fetchProductsAsync();
